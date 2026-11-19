@@ -36,7 +36,7 @@ double getDiscountRate(int cartLength) {
   if (cartLength >= AppConstants.discountTier4ItemsThreshold) {
     return AppConstants.discountTier4Rate;
   } else if (cartLength >= AppConstants.discountTier2ItemsThreshold) {
-    return AppConstants.discountTier4Rate;
+    return AppConstants.discountTier2Rate;
   }
   return AppConstants.noDiscountRate;
 }
@@ -65,8 +65,8 @@ double calculateFinalTotal(double subtotal, double discountAmount) {
 /// [productId] The ID of the product to find
 /// Returns the Product if found, null otherwise
 Product? findProductById(List<Product> catalog, int productId) {
-  if (productId >= 1 && productId <= catalog.length) {
-    return catalog[productId];
+  if (productId > 0 && productId <= catalog.length) {
+    return catalog[productId - 1];
   }
   return null;
 }
@@ -81,5 +81,5 @@ int? validateProductId(String? input, int catalogLength) {
   if (chosenId != null && chosenId >= 1 && chosenId <= catalogLength) {
     return chosenId;
   }
-  return chosenId;
+  return null;
 }

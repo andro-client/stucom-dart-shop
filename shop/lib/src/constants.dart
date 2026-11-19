@@ -67,7 +67,7 @@ class AppConstants {
   static const double discountTier2Rate = 0.10;
 
   static const int discountTier4ItemsThreshold = 4;
-  static const double discountTier4Rate = 0.10;
+  static const double discountTier4Rate = 0.20;
 
   static const double noDiscountRate = 0.0;
 
